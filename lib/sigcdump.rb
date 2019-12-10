@@ -2,6 +2,15 @@ require 'sigcdump/version'
 require 'sigcdump/sigcdump'
 
 class << Sigcdump
+  def setup(signal = ENV['SIGCDUMP_SIGNAL'] || 'SIGCONT', path = ENV['SIGCDUMP_PATH'])
+    Kernel.trap(signal) do
+      begin
+        dump(path)
+      rescue
+      end
+    end
+  end
+
   def dump(arg = ENV['SIGCDUMP_PATH'])
     with_path_and_io(arg) do |path, io|
       io.write "Sigcdump at #{Time.now} process #{Process.pid} (#{$0})\n"

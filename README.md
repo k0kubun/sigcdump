@@ -20,13 +20,13 @@ NOTE: Unlike sigdump, this gem supports only CRuby.
 
 ```rb
 require 'sigcdump'
-Sigcdump.setup('SIGTTIN')
+Sigcdump.setup('SIGCONT')
 ```
 
 or:
 
 ```rb
-# this calls Sigcdump.setup('SIGTTIN')
+# this calls Sigcdump.setup('SIGCONT')
 require 'sigcdump/setup'
 ```
 
