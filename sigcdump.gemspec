@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   end + %w[
     addr2line.h
     addr2line.c
-  ].map { |f| File.join('ext/sigcdump/ruby/ruby', f) }
+  ].map { |f| File.join('ext/sigcdump/ruby', f) }
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
