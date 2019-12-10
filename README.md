@@ -30,7 +30,7 @@ or:
 require 'sigcdump/setup'
 ```
 
-Then `kill -TTIN <pid>` will show a C backtrace of a CRuby process to `/tmp/sigcdump-#{Process.pid}.log`.
+Then `kill -CONT <pid>` will show a C backtrace of a CRuby process to `/tmp/sigcdump-#{Process.pid}.log`.
 
 ### stdout / stderr
 
