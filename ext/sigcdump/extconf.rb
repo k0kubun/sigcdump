@@ -1,9 +1,11 @@
 require 'mkmf'
 
+ruby_dir = File.expand_path('./ruby', __dir__)
+$INCFLAGS << " -I#{ruby_dir}"
+
 $srcs = %w[
   sigcdump.c
 ]
-ruby_dir = File.expand_path('./ruby', __dir__)
 %w[
   addr2line.c
 ].each do |c|
@@ -11,4 +13,4 @@ ruby_dir = File.expand_path('./ruby', __dir__)
   $srcs << c
 end
 
-create_makefile("sigcdump/sigcdump")
+create_makefile('sigcdump/sigcdump')

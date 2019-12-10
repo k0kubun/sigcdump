@@ -1,0 +1,3 @@
+[submodule "ext/sigcdump/ruby"]
+	path = ext/sigcdump/ruby
+	url = https://github.com/ruby/ruby.git
